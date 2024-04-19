@@ -1,0 +1,388 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{eso-pic}
+
+
+
+\usepackage[table]{xcolor}
+
+\definecolor{blue_casse}{RGB}{0, 0, 139}
+\definecolor{bleu_ciel}{RGB}{135,206,250}
+\definecolor{gris_casse}{RGB}{168,168,168}
+
+
+
+\usepackage{xcolor} % Package pour la couleur
+\definecolor{bleumarine}{RGB}{0, 0, 128} % Bleu marine en RGB
+\definecolor{bluefonce}{RGB}{0, 0, 139} % Bleu foncé en RGB
+\usepackage{setspace} % Package pour ajuster l'espacement entre les lignes
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+
+
+
+\usepackage{ulem} % Pour le soulignement
+\usepackage{geometry}
+
+\geometry{
+    a4paper,
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=2cm,
+}
+
+
+\begin{document}
+
+
+{Youssef NINEFLAS} {Finance et Ingénierie Décisionnelle}{Prédiction du trafic futur :}{M. TAOUFIQ Lahcen}{M. AHDAD Youssef}{sma1.png}{0.4}{M. Prof 2}{M. Prof 3}{00/05/2024}
+
+\newpage
+
+
+
+
+\begin{center}
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries REMERCIEMENT\par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    
+\end{center}
+\addcontentsline{toc}{section}{REMERCIEMENT}
+
+\setstretch{1.5} % Ajuste l'espacement entre les lignes à 1.5 (1.0 pour un espacement normal)
+\vspace{1cm}
+
+\textbf{A}u terme de ce travail, nous tenons à exprimer nos sincères remerciements à tous ceux et celles qui ont contribué à sa réalisation.\vspace{0.5cm}
+
+
+\textbf{N}ous souhaitons tout particulièrement exprimer notre profonde gratitude envers la Société de manutention d’Agadir pour leur accueil chaleureux et leur soutien tout au long de ce projet.\vspace{0.5cm}
+
+\textbf{N}ous tenons également à exprimer notre profonde gratitude et notre respect infini envers notre encadrant pédagogique, Monsieur \textbf{TAOUFIQ Lahcen}, qui a accepté avec honneur d'être notre guide et nous a prodigué des conseils précieux ainsi que des recommandations éclairées sur notre travail.\vspace{0.5cm}
+
+\textbf{N}ous adressons nos vifs remerciements à \textbf{(Madame /monsieur prof1)} et\textbf{ (Madame /monsieur prof2)}, qui ont eu l'amabilité d'évaluer notre travail, pour l'honneur qu'elles nous ont fait.\vspace{0.5cm}
+
+\textbf{N}ous exprimons notre gratitude à nos tuteurs de stage, Monsieur\textbf{ AHDAD Youssef}, pour son encadrement, ses conseils précieux, ses orientations judicieuses et sa disponibilité à notre égard, malgré ses nombreuses responsabilités.\vspace{0.5cm}
+
+\textbf{N}ous remercions également chaleureusement l'ensemble du personnel de la Société de manutention d’Agadir pour leur accueil chaleureux, leur disponibilité et leur sympathie.\vspace{0.5cm}
+
+\textbf{E}nfin, nous souhaitons exprimer notre profonde reconnaissance envers le corps professoral et administratif de l'École Nationale des Sciences Appliquées d'Agadir pour leur soutien constant tout au long de notre parcours.\vspace{0.5cm}
+
+\textbf{N}ous sommes infiniment reconnaissants envers toutes les personnes mentionnées précédemment et nous leur sommes sincèrement reconnaissants pour leur contribution précieuse à la réalisation de ce rapport de fin d'année.
+
+
+
+\newpage
+\begin{center}
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries RESUME\par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    
+\end{center}
+\addcontentsline{toc}{section}{RESUME}
+\setstretch{1.5} % Ajuste l'espacement entre les lignes à 1.5 (1.0 pour un espacement normal)
+
+\textbf{L}es prévisions jouent un rôle essentiel dans la gestion et la planification des entreprises, en leur permettant de prendre des décisions éclairées pour l'avenir. Elles consistent en l'estimation ou la prédiction de valeurs futures sur la base de données historiques et de modèles analytiques. Ces prévisions peuvent concerner divers aspects des opérations commerciales, tels que la demande des consommateurs, les ventes, la production, les revenus financiers, etc. Elles sont cruciales pour aider les entreprises à anticiper les tendances du marché, à allouer efficacement leurs ressources et à élaborer des stratégies compétitives.\vspace{0.5cm}
+
+
+\textbf{D}ans le contexte spécifique de la société de manutention à Agadir, Maroc, les prévisions revêtent une importance particulière en raison de la nature saisonnière et cyclique de son activité. En raison de sa localisation géographique stratégique et de son rôle dans le commerce international, la société de manutention est confrontée à des fluctuations de la demande de services de manutention, à la fois pour l'importation et l'exportation de marchandises. Les prévisions précises du tonnage ou du trafic sont cruciales pour la gestion efficace des ressources humaines, matérielles et financières de l'entreprise, ainsi que pour répondre aux besoins changeants de ses clients.\vspace{0.5cm}
+
+\textbf{D}e plus, ces prévisions sont étroitement liées aux revenus de l'entreprise. En anticipant le tonnage ou le trafic futur, la société de manutention peut évaluer de manière plus précise ses perspectives financières, notamment son chiffre d'affaires projeté. Ces estimations fournissent une base solide pour la planification budgétaire, l'investissement dans de nouveaux équipements ou infrastructures, et la prise de décisions stratégiques pour assurer la croissance et la rentabilité à long terme de l'entreprise.\vspace{0.5cm}
+
+\textbf{P}ar conséquent, ce rapport se concentre sur l'application de méthodes analytiques, telles que les séries temporelles et l'économétrie, pour réaliser des prévisions fiables du tonnage ou du trafic de la société de manutention à Agadir. En exploitant les données historiques disponibles et en tenant compte des facteurs économiques et commerciaux pertinents, nous chercherons à fournir des estimations précises et utiles pour aider la société à prendre des décisions stratégiques et opérationnelles informées, et à anticiper son chiffre d'affaires futur.
+
+
+\newpage
+\begin{center}
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries ABSTRACT\par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    
+\end{center}
+\addcontentsline{toc}{section}{ABSTRACT}
+
+\textbf{F}orecasts play an essential role in business management and planning, enabling companies to make informed decisions about the future. They involve estimating or predicting future values on the basis of historical data and analytical models. These forecasts can relate to various aspects of business operations, such as consumer demand, sales, production, financial income and so on. They are crucial in helping companies to anticipate market trends, allocate resources efficiently and develop competitive strategies.\vspace{0.5cm}
+
+\textbf{I}n the specific context of the materials handling company in Agadir, Morocco, forecasts are of particular importance due to the seasonal and cyclical nature of its business. Due to its strategic geographical location and its role in international trade, the handling company is faced with fluctuations in demand for handling services, both for the import and export of goods. Accurate tonnage or traffic forecasts are crucial for the efficient management of the company's human, material and financial resources, as well as for meeting the changing needs of its customers.\vspace{0.5cm}
+
+\textbf{W}hat's more, these forecasts are closely linked to the company's revenues. By anticipating future tonnage or traffic, the materials handling company can more accurately assess its financial prospects, including projected sales. These estimates provide a sound basis for budget planning, investment in new equipment or infrastructure, and strategic decision-making to ensure the company's long-term growth and profitability.\vspace{0.5cm}
+
+\textbf{C}onsequently, this report focuses on the application of analytical methods, such as time series and econometrics, to produce reliable tonnage or traffic forecasts for the Agadir stevedoring company. By exploiting available historical data and taking into account relevant economic and commercial factors, we will seek to provide accurate and useful estimates to help the company make informed strategic and operational decisions, and anticipate its future sales.
+
+
+
+\newpage
+\begin{center}
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries TABLE DE MATIERE\par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    
+\end{center}
+
+
+
+
+
+\tableofcontents % Génère la table des matières
+
+
+
+
+
+
+
+
+    % Trait en haut de couleur bleu ciel
+\newpage
+\begin{center}
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries LISTE DES ABRÉVIATIONS\par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    
+\end{center}
+\addcontentsline{toc}{section}{LISTE DES ABRÉVIATIONS}
+
+\newpage
+\begin{center}
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries LISTE DES FIGURES\par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    
+\end{center}
+\addcontentsline{toc}{section}{LISTE DES FIGURES}
+\listoffigures % Table des figures
+
+\newpage
+\begin{center}
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries LISTES DES TABLEAUX\par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    
+\end{center}
+\addcontentsline{toc}{section}{LISTES DES TABLEAUX}
+\listoftables % Table des tableaux
+
+
+\newpage
+\begin{center}
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries INTRODUCTION GENERALE \par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    
+    
+\end{center}
+\addcontentsline{toc}{section}{INTRODUCTION GENERALE }
+
+\textbf{L}e commerce international joue un rôle vital dans l'économie mondiale, et la gestion efficace des importations et des exportations est cruciale pour les entreprises opérant dans ce domaine. Dans ce contexte, le secteur de la manutention portuaire revêt une importance particulière, étant le maillon essentiel de la chaîne logistique du commerce maritime. La Société de Manutention Agadir (SMA), située au port d'Agadir, occupe une position stratégique en tant qu'acteur clé dans la gestion des flux de marchandises entrant et sortant du port.\vspace{0.5cm}
+
+\textbf{L}e port d'Agadir, situé sur la côte atlantique du Maroc, est l'un des principaux ports du pays, jouant un rôle essentiel dans le commerce maritime et la logistique. Offrant des infrastructures modernes et des installations de manutention de pointe, le port d'Agadir est un hub majeur pour les importations et les exportations, notamment dans les secteurs agricoles, de la pêche et du commerce général. Avec son emplacement stratégique sur les routes maritimes internationales, le port d'Agadir est un carrefour commercial vital reliant l'Afrique, l'Europe et d'autres régions du monde.\vspace{0.5cm}
+
+\textbf{D}ans le cadre de ce projet de fin d'année, nous nous concentrons sur le développement d'un modèle de prédiction des importations et des exportations de la Société de Manutention Agadir (SMA) en se basant sur son historique d'activité. L'objectif principal est d'utiliser des techniques avancées de modélisation, notamment des modèles de machine learning et des modèles de séries temporelles, pour anticiper les tendances futures des flux de marchandises entrant et sortant du port. Cette prédiction permettra à la SMA de mieux planifier ses opérations, d'optimiser ses ressources et d'améliorer sa compétitivité sur le marché mondial en constante évolution.\vspace{0.5cm}
+
+\textbf{C}e projet est structuré en trois chapitres principaux:\vspace{0.5cm}
+\begin{itemize}
+    \item \textbf{Chapitre 1 :}\textbf{ Présentation générale de l'organisme d'accueil et cadre du projet}\newline
+     \textbf{C}e chapitre offre un aperçu détaillé de la Société de Manutention Agadir (SMA), de ses activités, de sa structure organisationnelle et de son rôle dans le port d'Agadir.\vspace{0.5cm}
+
+     
+
+      \item \textbf{Chapitre 2 : Partie théorique}\newline
+         \textbf{C}e chapitre se concentre sur la partie théorique du projet, en explorant les principaux concepts, modèles et techniques de prévision utilisés dans l'analyse des données. Il examine en détail les modèles de prédiction, les méthodes statistiques et les relations mathématiques pertinentes pour la prévision des importations et des exportations.\vspace{0.5cm}
+
+       \item \textbf{Chapitre 3 : Partie pratique}\newline
+        \textbf{C}e chapitre aborde la mise en œuvre pratique du projet, en détaillant les étapes de collecte, de préparation et d'analyse des données. Il décrit la sélection et l'ajustement des modèles de prédiction, ainsi que l'évaluation de leur performance à l'aide de données historiques de la SMA. Enfin, ce chapitre présente les résultats de la prévision des importations et des exportations, en mettant en évidence les tendances prévues et les implications pour la gestion logistique de la SMA.\vspace{0.5cm}
+        
+\end{itemize}
+
+\textbf{E}n conclusion, ce projet vise à fournir à la Société de Manutention Agadir (SMA) un outil puissant pour anticiper et gérer efficacement les flux de marchandises au port d'Agadir, contribuant ainsi à renforcer sa compétitivité et son efficacité opérationnelle dans le secteur de la manutention portuaire. De plus, ce projet a pour objectif de fournir à la société une estimation précise du chiffre d'affaires généré par ses activités d'importation et d'exportation, permettant ainsi une meilleure planification financière et une prise de décision plus éclairée. 
+
+
+\newpage
+
+\begin{center}
+\vspace*{\fill} % Place le titre verticalement au centre de la page
+    % Trait en haut de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[1.5ex]
+    
+    % Titre avec la couleur bleu ciel
+    {\color{cyan}\Huge\bfseries Chapitre 1\par}
+    
+    % Trait en bas de couleur bleu ciel
+    {\color{cyan}\rule{\linewidth}{0.5mm}} \\[2ex]
+    \vspace*{\fill} % Place le titre verticalement au centre de la page
+\end{center}
+
+\newpage
+
+\section{\textcolor{bleumarine}{Chapitre 1 : Présentation générale d’organisme d’accueil et cadre du projet}}
+\vspace{1cm}
+
+
+
+\subsection{\textcolor{cyan}{Introduction :}} 
+
+\textbf{D}ans ce chapitre une vue générale sur l’environnement de notre projet de fin d’année, une description de l’organisme d’accueil, Leurs activités concernant la manutention et entreposage et aussi les matériels au sein de la société et leurs fonctionnements.
+
+\subsection{\textcolor{cyan}{Présentation de l’entreprise :} } 
+\subsubsection{Activités :} 
+\textbf{S}ociété de manutention d’Agadir (SMA) chargée de l’exploitation du quai Nord du port d’Agadir, c’est un partenariat public-privé entre MARSA MAROC qui contrôle 51 \%  et les trois minoritaires privés que sont la société maritime d’Agadir (Somatime), la compagnie marocaine de manutention et de la consignation du Souss (Manusouss) et la Société de transit et de consignation maritime d’Agadir (Internavi).\vspace{0.5cm}
+
+\textbf{L}es principales activités de SMA concernent le traitement et le stockage, y compris les services suivants :
+\begin{itemize}
+ 
+
+   \item\textbf{Manutention} : SMA centralise les opérations de chargement et de déchargement de toutes les cargaisons sur les navires et les quais.
+
+   \item \textbf{Entreposage} : L'entreprise est responsable du stockage et de l'entreposage des marchandises transformées après avoir attendu que les marchandises quittent le port lors de l'importation ou de l'entrée dans le port lors de l'exportation.
+
+   \item \textbf{Autres services de manutention} : L'entreprise fournit également des services de marchandise, y compris le chargement et le déchargement de marchandises dans des conteneurs (déchargement, emballage), le pesage de marchandises avec une balance au sol (pesage), et la fixation de marchandises en hauteur pour gagner de la place (empilage), etc.
+\end{itemize}
+\newpage
+\subsubsection{Fiche technique :} 
+\textbf{L}e tableau suivant représente la fiche technique de SMA (tableau 1).\vspace{0.8cm}
+
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{2} % Ajuster la hauteur des lignes
+\begin{tabular}{|>{\columncolor{bleu_ciel}}p{6cm}|p{8cm}|}
+\hline
+\textbf{Société Anonyme} & {Filiale Marsa MAROC} \\
+\hline
+\textbf{Raison sociale} & {SMA (Société de Manutention d'Agadir)} \\
+\hline
+\textbf{Date de création} & {06/2016} \\
+\hline
+\textbf{Capital} & {34.000.000 DH} \\
+\hline
+\textbf{Actionnaires} & {51\% MARSA MAROC, 16,34\% SOMATIME, 16,33\% MANUSOUSS, 16,33\% Internavi} \\
+\hline
+\textbf{Adresse} & {Boulevard Mohamed V, Immeuble Al Watanya – Agadir} \\
+\hline
+\textbf{Téléphone/fax} & {Tel: 0528843700 / Fax: 0528842825} \\
+\hline
+\textbf{Directeur général} & {M. BALLAT Abderrahmane} \\
+\hline
+\end{tabular}
+\caption{Informations de la société}
+\end{table}
+
+
+
+
+ 
+\subsubsection{Organigramme :}
+\textbf{ L}e schéma suivant représente la structure organisationnelle de SMA (figure 1).
+
+\begin{figure}[h]
+    \centering
+     
+    \caption{Organigramme de l'entreprise}
+    \label{fig:monimag}
+\end{figure}
+
+
+
+\subsection{\textcolor{cyan}{Contexte pédagogique et intérêt du projet :}} 
+\subsubsection{Contexte pédagogique :}
+\textbf{C}e stage s’inscrit dans le cadre d’un projet de fin d’année qui permet de compléter et de mettre en œuvre la théorie acquise durant les années d’études à l’ENSA AGADIR.
+\subsubsection{Acteurs du projet :}
+\textbf{L}es acteurs intervenant dans ce projet sont : \vspace{0.5cm}
+
+\textbf{Maître d’œuvre :} Ecole Nationale des Sciences Appliquées Agadir, présenté par \textbf{AKKI yazid}  et \textbf{NINEFLAS youssef} en tant que des étudiants en 2éme année Cycle Finance et Ingénierie Décisionnelle : Ecole Nationale des Sciences Appliquées Agadir – Maroc Tél :+212 (0)52822 83 13 Email : contact\_ensa@uiz.ac.ma \vspace{0.5cm}
+
+\textbf{Maître d’ouvrage }: Section financiére	de la société de manutention d’Agadir.
+Coordonnées : SMA Boulevard Mohamed V, Immeuble Al Wataniya – Agadir Tel : 0528843700 / Fax : 0528842825 \vspace{0.5cm}
+
+\textbf{Les acteurs relais }: Le projet a été réalisée sous le suivi et l’encadrement de :
+\begin{itemize}
+    
+
+\item \textbf{M. TAOUFIQ Lahcen }: Encadrant pédagogique.
+ 
+\item \textbf{M. AHDAD Youssef} : Encadrant professionnel.
+\end{itemize}
+\subsubsection{Cahier des charges}
+\textbf{D}ans le cadre de notre étude, le cahier de charges qui nous a été soumis est le suivant:
+\begin{itemize}
+   
+
+ \item Faire la prévision du tonnage lors de l’exportation et l’importation au profil de la société de manutention agadir   (SMA).
+
+ \item Après avoir déterminé le tonnage à prévoir, nous le multiplions par le prix d'une tonne afin de calculer le chiffre d'affaires.
+\end{itemize}
+
+\subsubsection{Contraintes du sujet :}
+\textbf{L}es contraintes dictent que le sujet de notre PFA est basé sur les cours d'économétrie et de séries temporelles, qui sont programmés au même semestre que le PFA.
+
+
+
+
+
+
+\subsection{\textcolor{cyan}{La valeur ajoutée du projet :}} 
+
+
+\textbf{L}a valeur ajoutée du sujet de notre PFA réside dans plusieurs aspects : \vspace{0.5cm}
+
+\textbf{Analyse des données} : Nous allons collecter et analyser les données de trafic ainsi que les données de tonnage d'importation et d'exportation de la société de manutention d'Agadir (SMA). Cette analyse nous permettra de comprendre les tendances passées et actuelles du trafic portuaire ainsi que les volumes d'importation et d'exportation de notre société.
+
+\textbf{Prévisions} : En utilisant des techniques de prévision telles que les modèles de séries temporelles ou d'économétrie, nous allons prévoir le trafic futur ainsi que le tonnage d'importation et d'exportation de la société SMA. Ces prévisions nous permettront d'estimer le chiffre d'affaires potentiel de notre société pour les périodes à venir.
+
+\textbf{Planification stratégique} : Sur la base des prévisions obtenues, nous serons en mesure d'aider la société SMA à élaborer des stratégies de gestion du trafic et de la logistique, ainsi que des stratégies commerciales pour optimiser ses opérations et maximiser son chiffre d'affaires.
+
+\textbf{Prise de décision éclairée }: Nos analyses et prévisions fourniront à la société SMA des informations précieuses pour prendre des décisions éclairées en matière d'investissement, de gestion des ressources et de développement commercial.\vspace{0.5cm}
+
+\textbf{E}n résumé, la valeur ajoutée de notre PFA réside dans notre capacité à fournir des insights précieux à la société de manutention d'Agadir (SMA) pour optimiser ses opérations, planifier sa croissance et maximiser son chiffre d'affaires en se basant sur des données et des prévisions fiables.
+
+
+\subsection{\textcolor{cyan}{Conclusion :}} 
+
+
+\textbf{L}e présent chapitre a été dédié à un aperçu général sur l’entreprise SMA, son organigramme, ainsi que le contexte pédagogique et l’intérêt du projet.
+
+\end{document}
