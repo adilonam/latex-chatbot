@@ -302,3 +302,5 @@ TSWLatexianTemp*
 
 #output
 *.pdf
+
+*.los
